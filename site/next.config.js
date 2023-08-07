@@ -5,7 +5,7 @@ const nextConfig = {
     name: 'MartinCanto/Kasm Technologies',
     description: 'The MartinCanto store for Kasm supported workspaces.',
     icon: '/img/logo.svg',
-    listUrl: 'https://github.com/MartinCanto/kasm-registry/',
+    listUrl: 'hhttps://martincanto.github.io/kasm-registry/',
     contactUrl: 'https://kasmweb.com/support',
   },
   reactStrictMode: true,
