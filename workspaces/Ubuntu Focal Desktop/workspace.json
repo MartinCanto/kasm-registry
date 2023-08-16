@@ -1,6 +1,6 @@
 {
   "friendly_name": "Ubuntu Focal Desktop",
-  "image_src": "blob:https://martincanto.github.io/83440390-7843-4f21-89c2-ee212e5732c9",
+  "image_src": "OIP.jpg",
   "description": "Ubuntu Focal Desktop",
   "name": "joeymartin77/ubuntu-focal-desktop:1.01",
   "cores": 2,
