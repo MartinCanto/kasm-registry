@@ -1,7 +1,7 @@
 {
-  "friendly_name": "Ubuntu Focal Desktop",
-  "image_src": "OIP.jpg",
-  "description": "Ubuntu Focal Desktop",
+  "friendly_name": "Ubuntu Focal",
+  "image_src": "ubuntu.png",
+  "description": "Ubuntu is a Linux distribution based on Debian.",
   "name": "joeymartin77/ubuntu-focal-desktop:1.01",
   "cores": 2,
   "memory": 2768,
@@ -9,12 +9,22 @@
   "cpu_allocation_method": "Inherit",
   "docker_registry": "https://index.docker.io/v1/",
   "categories": [
-    "Desktop"
+    "Desktop",
+    "Productivity",
+    "Development"
   ],
   "require_gpu": false,
   "enabled": true,
   "image_type": "Container",
+  "run_config": {
+    "hostname": "kasm"
+  },
   "architecture": [
-    "amd64"
-  ]
+    "amd64",
+    "arm64"
+  ],
+  "compatibility": [
+    "1.13.x"
+  ],
+  "uncompressed_size_mb": 3960
 }
