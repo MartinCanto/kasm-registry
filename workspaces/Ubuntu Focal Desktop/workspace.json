@@ -1,0 +1,20 @@
+{
+  "friendly_name": "Ubuntu Focal Desktop",
+  "image_src": "blob:https://martincanto.github.io/83440390-7843-4f21-89c2-ee212e5732c9",
+  "description": "Ubuntu Focal Desktop",
+  "name": "joeymartin77/ubuntu-focal-desktop:1.01",
+  "cores": 2,
+  "memory": 2768,
+  "gpu_count": 0,
+  "cpu_allocation_method": "Inherit",
+  "docker_registry": "https://index.docker.io/v1/",
+  "categories": [
+    "Desktop"
+  ],
+  "require_gpu": false,
+  "enabled": true,
+  "image_type": "Container",
+  "architecture": [
+    "amd64"
+  ]
+}
