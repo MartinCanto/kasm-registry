@@ -10,8 +10,7 @@ WORKDIR $HOME
 RUN add-apt-repository multiverse -y
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y wget curl
-RUN apt-get install -y gnupg
+RUN apt-get install -y wget curl dirmngr ca-certificates software-properties-common gnupg gnupg2
 RUN apt-get install -y gnome-system-monitor
 RUN apt-get install -y gnome-calculator
 RUN apt-get install -y mlocate
@@ -24,7 +23,13 @@ RUN apt-get install -y fonts-lyx
 RUN apt-get install -y firefox
 RUN apt-get install -y evolution
 RUN apt-get install -y evolution-ews
-RUN apt-get install -y krita* kdenlive* audacity*
+RUN apt-get install -y krita krita-data
+RUN apt-get install -y krita-gmic
+RUN apt-get install -y krita-l10n
+RUN apt-get install -y blender
+RUN apt-get install -y blender-data
+RUN apt-get install -y openshot-qt
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ttf-mscorefonts-installer
 
 RUN wget https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11701/wps-office_11.1.0.11701.XA_amd64.deb -O wps-office.deb
