@@ -1,8 +1,8 @@
 {
-  "friendly_name": "Ubuntu Focal",
+  "friendly_name": "Ubuntu Jammy",
   "image_src": "ubuntu.png",
   "description": "Ubuntu is a Linux distribution based on Debian.",
-  "name": "joeymartin77/ubuntu-focal-desktop:1.02",
+  "name": "joeymartin77/ubuntu-jammy-desktop:1.02",
   "cores": 2,
   "memory": 2768,
   "gpu_count": 0,
