@@ -43,20 +43,7 @@ RUN rm -rf rambox.deb
 
 RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN apt autoremove -y
-
-# Clean-up
-
-RUN rm --recursive --force \
-    /usr/share/doc/* \
-    /usr/share/man/* \
-    /var/cache/apt/archives/*.deb \
-    /var/cache/apt/archives/partial/*.deb \
-    /var/cache/apt/*.bin \
-    /var/cache/debconf/*.old \
-    /var/lib/apt/lists/* \
-    /var/lib/dpkg/info/* \
-    /var/log/apt \
-    /var/log/*.log 
+RUN apt clean all
 ######### End Customizations ###########
 
 RUN chown 1000:0 $HOME
