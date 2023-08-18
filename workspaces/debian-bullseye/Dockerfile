@@ -1,4 +1,4 @@
-FROM kasmweb/core-debian-bullseye
+FROM kasmweb/core-debian-bullseye:1.14.0
 USER root
 
 ENV HOME /home/kasm-default-profile

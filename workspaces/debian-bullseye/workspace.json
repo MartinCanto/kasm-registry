@@ -1,8 +1,8 @@
 {
-  "friendly_name": "Ubuntu Jammy",
-  "image_src": "ubuntu.png",
-  "description": "Ubuntu is a Linux distribution based on Debian.",
-  "name": "joeymartin77/ubuntu-jammy-desktop:1.02",
+  "friendly_name": "Debian Bullseye",
+  "image_src": "debian.png",
+  "description": "Debian.",
+  "name": "joeymartin77/debian-bullseye-desktop:1.02",
   "cores": 2,
   "memory": 2768,
   "gpu_count": 0,
