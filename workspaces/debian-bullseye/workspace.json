@@ -1,6 +1,6 @@
 {
   "friendly_name": "Debian Bullseye",
-  "image_src": "debian.png",
+  "image_src": "debian.jpg",
   "description": "Debian.",
   "name": "joeymartin77/debian-bullseye-desktop:1.02",
   "cores": 2,
