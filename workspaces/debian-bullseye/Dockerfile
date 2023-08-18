@@ -9,15 +9,7 @@ WORKDIR $HOME
 ######### Customize Container Here ###########
 RUN apt-get update
 RUN apt-get upgrade -y
-
-RUN wget https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11701/wps-office_11.1.0.11701.XA_amd64.deb -O wps-office.deb
-RUN dpkg -i wps-office.deb
-RUN  rm -rf wps-office.deb
-
-RUN wget "https://rambox.app/api/download?os=linux&package=deb" -O rambox.deb
-RUN apt-get install -y gconf-service gconf-service-backend gconf2 gconf2-common libappindicator1 libgconf-2-4 libindicator7
-RUN dpkg -i rambox.deb
-RUN rm -rf rambox.deb
+RUN apt-get install sudo -y
 
 RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN apt autoremove -y
