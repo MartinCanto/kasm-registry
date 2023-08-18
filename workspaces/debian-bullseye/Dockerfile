@@ -11,6 +11,9 @@ RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install sudo -y
 
+#install baseapps
+#RUN DEBIAN_FRONTEND='noninteractive' apt-get install -y firefox-esr gnome-metronome audacity ardour hydrogen rakarrack yoshimi qtractor
+
 RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN apt autoremove -y
 RUN apt clean all
