@@ -8,7 +8,6 @@ WORKDIR $HOME
 
 ######### Customize Container Here ###########
 RUN add-apt-repository multiverse -y
-RUN add-apt-repository ppa:openshot.developers/ppa -y
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y wget curl dirmngr ca-certificates software-properties-common gnupg gnupg2
@@ -29,7 +28,6 @@ RUN apt-get install -y krita-gmic
 RUN apt-get install -y krita-l10n
 RUN apt-get install -y blender
 RUN apt-get install -y blender-data
-RUN apt-get install -y openshot-qt python3-openshot
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ttf-mscorefonts-installer
 
