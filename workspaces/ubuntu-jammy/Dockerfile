@@ -40,6 +40,16 @@ RUN apt-get install -y gconf-service gconf-service-backend gconf2 gconf2-common 
 RUN dpkg -i rambox.deb
 RUN rm -rf rambox.deb
 
+RUN  appverdot=$( curl --location --silent --url https://shotcut.org/download/ | grep linux | \
+    perl -nle 'print "${1}" if /Recommended Stable Version: (\K[^<]+)/' ) \
+&&  appver=$( echo "${appverdot}" | tr -d . ) \
+&&  echo https://github.com/mltframework/shotcut/releases/download/v"${appverdot}"/shotcut-linux-x86_64-"${appver}".txz \
+&&  curl --location --silent --url \
+    https://github.com/mltframework/shotcut/releases/download/v"${appverdot}"/shotcut-linux-x86_64-"${appver}".txz | \
+    tar --extract --xz --directory /opt \
+&&  chown --recursive "${uid}:${gid}" /opt/Shotcut
+
+
 RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN apt autoremove -y
 RUN apt clean all
