@@ -28,6 +28,7 @@ RUN apt-get install -y krita-gmic
 RUN apt-get install -y krita-l10n
 RUN apt-get install -y blender
 RUN apt-get install -y blender-data
+RUN apt-get install -y shotcut shotcut-data
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ttf-mscorefonts-installer
 
@@ -40,19 +41,22 @@ RUN apt-get install -y gconf-service gconf-service-backend gconf2 gconf2-common 
 RUN dpkg -i rambox.deb
 RUN rm -rf rambox.deb
 
-RUN  appverdot=$( curl --location --silent --url https://shotcut.org/download/ | grep linux | \
-    perl -nle 'print "${1}" if /Recommended Stable Version: (\K[^<]+)/' ) \
-&&  appver=$( echo "${appverdot}" | tr -d . ) \
-&&  echo https://github.com/mltframework/shotcut/releases/download/v"${appverdot}"/shotcut-linux-x86_64-"${appver}".txz \
-&&  curl --location --silent --url \
-    https://github.com/mltframework/shotcut/releases/download/v"${appverdot}"/shotcut-linux-x86_64-"${appver}".txz | \
-    tar --extract --xz --directory /opt \
-&&  chown --recursive "${uid}:${gid}" /opt/Shotcut
-
-
 RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN apt autoremove -y
-RUN apt clean all
+
+# Clean-up
+
+RUN rm --recursive --force \
+    /usr/share/doc/* \
+    /usr/share/man/* \
+    /var/cache/apt/archives/*.deb \
+    /var/cache/apt/archives/partial/*.deb \
+    /var/cache/apt/*.bin \
+    /var/cache/debconf/*.old \
+    /var/lib/apt/lists/* \
+    /var/lib/dpkg/info/* \
+    /var/log/apt \
+    /var/log/*.log 
 ######### End Customizations ###########
 
 RUN chown 1000:0 $HOME
