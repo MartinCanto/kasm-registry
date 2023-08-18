@@ -10,7 +10,6 @@ WORKDIR $HOME
 RUN apt-get update
 RUN apt-get upgrade -y
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ttf-mscorefonts-installer
 RUN wget https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11701/wps-office_11.1.0.11701.XA_amd64.deb -O wps-office.deb
 RUN dpkg -i wps-office.deb
 RUN  rm -rf wps-office.deb
