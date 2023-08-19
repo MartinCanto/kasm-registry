@@ -12,7 +12,7 @@ RUN apt-get upgrade -y
 RUN apt-get install sudo -y
 
 #install xfce-desktop
-RUN DEBIAN_FRONTEND='noninteractive' apt-get -y install education-desktop-xfce
+RUN DEBIAN_FRONTEND='noninteractive' apt install task-xfce-desktop -y
 
 #Replace Libre office with wps
 RUN apt-get remove --purge ‘libreoffice*’ -y
@@ -21,6 +21,8 @@ RUN wget https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11701
 RUN dpkg -i wps-office.deb
 RUN  rm -rf wps-office.deb
 
+#Install Apps
+RUN apt-get install -y jfractionlab stellarium wordnet kstars kgeography gperiodic geogebra easychem lightspeed grace scratch minuet openuniverse kalzium marble
 
 RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN apt autoremove -y
