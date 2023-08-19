@@ -14,6 +14,14 @@ RUN apt-get install sudo -y
 #install xfce-desktop
 RUN DEBIAN_FRONTEND='noninteractive' apt-get -y install education-desktop-xfce
 
+#Replace Libre office with wps
+RUN apt-get remove --purge ‘libreoffice*’ -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ttf-mscorefonts-installer
+RUN wget https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11701/wps-office_11.1.0.11701.XA_amd64.deb -O wps-office.deb
+RUN dpkg -i wps-office.deb
+RUN  rm -rf wps-office.deb
+
+
 RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN apt autoremove -y
 RUN apt clean all
