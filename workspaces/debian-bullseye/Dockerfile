@@ -12,7 +12,7 @@ RUN apt-get upgrade -y
 RUN apt-get install sudo -y
 
 #install xfce-desktop
-RUN DEBIAN_FRONTEND='noninteractive' apt install task-xfce-desktop -y
+RUN DEBIAN_FRONTEND='noninteractive' apt-get -y install education-desktop-xfce
 
 RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN apt autoremove -y
