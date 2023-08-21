@@ -15,13 +15,13 @@ RUN apt-get install sudo -y
 RUN DEBIAN_FRONTEND='noninteractive' apt install task-xfce-desktop -y
 
 #Install wps
-RUN wget https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11701/wps-office_11.1.0.11701.XA_amd64.deb -O wps-office.deb
+RUN wget https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11704/wps-office_11.1.0.11704.XA_amd64.deb -O wps-office.deb
 RUN dpkg -i wps-office.deb
 RUN  rm -rf wps-office.deb
 
 #Install Apps
-RUN apt-get install -y jfractionlab stellarium wordnet kstars kgeography gperiodic geogebra easychem lightspeed grace scratch minuet openuniverse kalzium marble
-
+#RUN apt-get install -y jfractionlab stellarium wordnet kstars kgeography gperiodic geogebra easychem lightspeed grace scratch minuet openuniverse kalzium
+RUN apt-get install -y libreoffice evolution thunderbird gimp inkscape gnome-calendar rednotebook zim kmymoney shotcut
 RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN apt autoremove -y
 RUN apt clean all
