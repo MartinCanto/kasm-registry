@@ -21,7 +21,7 @@ RUN  rm -rf wps-office.deb
 
 #Install Apps
 #RUN apt-get install -y jfractionlab stellarium wordnet kstars kgeography gperiodic geogebra easychem lightspeed grace scratch minuet openuniverse kalzium
-RUN apt-get install -y libreoffice evolution thunderbird gimp inkscape gnome-calendar rednotebook zim kmymoney shotcut
+RUN apt-get install -y libreoffice evolution thunderbird gimp inkscape gnome-calendar rednotebook zim kmymoney shotcut gpodder
 RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN apt autoremove -y
 RUN apt clean all
