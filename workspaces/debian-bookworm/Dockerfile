@@ -22,7 +22,7 @@ RUN  rm -rf wps-office.deb
 # Install Spotify
 RUN su -c 'echo "APT::Get::Update::SourceListWarnings::NonFreeFirmware \"false\";" > /etc/apt/apt.conf.d/no-bookworm-firmware.conf'
 RUN echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4773BD5E130D1D45
+RUN curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 RUN apt update
 RUN apt-get install -y spotify-client
 
