@@ -19,10 +19,21 @@ RUN wget https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11704
 RUN dpkg -i wps-office.deb
 RUN  rm -rf wps-office.deb
 
+# Install Spotify
+RUN su -c 'echo "APT::Get::Update::SourceListWarnings::NonFreeFirmware \"false\";" > /etc/apt/apt.conf.d/no-bookworm-firmware.conf'
+RUN echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4773BD5E130D1D45
+RUN apt update -y
+RUN apt-get install -y spotify-client
+
 #Install Apps
 #RUN apt-get install -y jfractionlab stellarium wordnet kstars kgeography gperiodic geogebra easychem lightspeed grace scratch minuet openuniverse kalzium
-RUN apt-get install -y evolution thunderbird gimp inkscape gnome-calendar rednotebook zim kmymoney shotcut gpodder darktable
+RUN apt-get install -y evolution gimp gnome-calendar rednotebook zim gpodder darktable
+RUN apt remove -y xfburn
+
 RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+
 RUN apt autoremove -y
 RUN apt clean all
 ######### End Customizations ###########
