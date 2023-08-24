@@ -33,7 +33,6 @@ RUN apt remove -y xfburn
 
 #Install Rambox
 RUN wget "https://rambox.app/api/download?os=linux&package=deb" -O rambox.deb
-RUN apt-get install -y gconf-service gconf-service-backend gconf2 gconf2-common libappindicator1 libgconf-2-4 libindicator7
 RUN dpkg -i rambox.deb
 RUN rm -rf rambox.deb
 
